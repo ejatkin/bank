@@ -1,10 +1,18 @@
 require 'account'
 
 describe Account do
-  it { is_expected.to respond_to :release_money}
+  subject(:account) { Account.new }
 
-  it "releases available money" do
-    money = subject.release_money
-    expect(money).to be_available
+  context "account" do
+
+    it "should allow a user to withdraw available money" do
+      expect(account.withdraw(100)).to eq -100
+    end
+
+    it "should allow a user to make a deposit" do
+      expect(account.deposit(100)).to eq 100
+    end
+
   end
+
 end
