@@ -15,4 +15,14 @@ describe Account do
 
   end
 
+  context "balance" do
+
+    it "should allow a user to check their balance" do
+      expect(account.balance).to eq 0
+    end
+
+  end
+
+
+
 end

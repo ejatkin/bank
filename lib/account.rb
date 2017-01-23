@@ -2,18 +2,23 @@ require_relative 'money'
 
 class Account
 
-  attr_reader :balance, :money
+  attr_reader :funds, :money
 
   def initialize
-    @balance = 0
+    @funds = 0
   end
 
   def withdraw(money)
-    @balance -= money
+    @funds -= money
   end
 
   def deposit(money)
-    @balance += money
+    @funds += money
   end
+
+  def balance
+    @funds = funds
+  end
+
 
 end
